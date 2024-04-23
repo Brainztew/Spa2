@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <h1>Välkommen till en värld full av SPA!</h1>
+      <h1>Välkommen till en värld full av SPA, Äntligen ska bli SPAnnande!</h1>
       <Meny setPage={setPage} />
       {{
         start: <Start />,
