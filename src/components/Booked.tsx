@@ -18,7 +18,7 @@ function Booked() {
   const adminPassword = 'admin';
 
   useEffect(() => {
-    fetch('https://188.166.44.168:8080/bookings')
+    fetch('http://188.166.44.168:8080/bookings')
       .then(response => response.json())
       .then(data => {
         const sortedData = data.sort((a: Booking, b: Booking) => new Date(a.date).getTime() - new Date(b.date).getTime());
@@ -27,7 +27,7 @@ function Booked() {
   }, [areYouAdmin]);
 
   const deleteBooking = (id: string) => {
-    fetch(`https://188.166.44.168:8080/bookings/${id}`, {
+    fetch(`http://188.166.44.168:8080/bookings/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer admin-token` 
     }})
@@ -60,7 +60,7 @@ function Booked() {
         <button onClick={() => {
           if(password === adminPassword) {
             setAreYouAdmin(true);
-            fetch('https://188.166.44.168:8080/bookings', {
+            fetch('http://188.166.44.168:8080/bookings', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ password })

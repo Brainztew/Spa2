@@ -32,7 +32,7 @@ function Booking() {
 
 
     useEffect(() => {
-      fetch('https://sholiday.faboul.se/dagar/v2.1/2024')
+      fetch('http://sholiday.faboul.se/dagar/v2.1/2024')
       .then(response => response.json())
       .then(data => {
       console.log(data) 
@@ -42,7 +42,7 @@ function Booking() {
 });}, []);
     
 useEffect(() => {
-  fetch('https://188.166.44.168:8080/bookings')
+  fetch('http://188.166.44.168:8080/bookings')
   .then(response => response.json())
   .then(data => setBookings(data));
 }, [treatment, time, name, phone, bookings]);
@@ -83,7 +83,7 @@ useEffect(() => {
 
   const booking = { date: selectedDate , treatment, time, name, phone };
 
-  fetch('https://188.166.44.168:8080/bookings', {
+  fetch('http://188.166.44.168:8080/bookings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
