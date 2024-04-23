@@ -41,11 +41,11 @@ function Booking() {
       setHolidays(holiday);
 });}, []);
     
-    useEffect(() => {
-        fetch('http://localhost:8080/bookings')
-        .then(response => response.json())
-        .then(data => setBookings(data));
-        }, [treatment, time, name, phone, bookings]);
+useEffect(() => {
+  fetch('http://188.166.44.168:8080/bookings')
+  .then(response => response.json())
+  .then(data => setBookings(data));
+}, [treatment, time, name, phone, bookings]);
 
     useEffect(() => {
         setTreatment('');
@@ -83,7 +83,7 @@ function Booking() {
 
   const booking = { date: selectedDate , treatment, time, name, phone };
 
-  fetch('http://localhost:8080/bookings', {
+  fetch('http://188.166.44.168:8080/bookings', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
